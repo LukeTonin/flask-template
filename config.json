@@ -1,0 +1,7 @@
+{
+    "SECRET_KEY": "example",
+    "CACHE": {
+        "CACHE_TYPE": "filesystem",
+        "CACHE_DIR": "tmp"
+    }
+}

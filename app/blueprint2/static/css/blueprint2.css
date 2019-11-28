@@ -1,0 +1,63 @@
+.form-wrapper {
+  width: 500px;
+}
+
+.datetime-wrapper {
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-between;
+}
+
+.datetime-wrapper > label {
+  width: 20%
+}
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit], button{
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover, button:hover {
+  background-color: #45a049;
+}
+
+label {
+  font-weight: bold;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  cursor:pointer;
+}
+
+.table-wrapper
+{
+  border: 1px solid red;
+  width: 100%;
+  height: 500px;
+  overflow: auto;
+}
+  
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(odd) {background-color: #f1f1f1;}
+tr:first-child{font-weight: bold;}

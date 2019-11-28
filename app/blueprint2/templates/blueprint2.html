@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+
+{% block header%}
+<title>Select Section</title>
+<script>
+    var sitesAndRooms = {{ sites_and_rooms | tojson }}
+</script>
+<link rel="stylesheet" href={{ url_for('static', filename='css/blueprint2.css') }}>
+<script src={{ url_for('static', filename='js/blueprint2.js') }}></script>
+{% endblock %}
+
+{% block content %}
+<div class="form-wrapper">
+    <form id="form" action="/blueprint1" method="POST" target="_blank">
+        <label for="site_name">Site</label>
+        <br>
+        <select id="site_name" name="site_name" required></select>
+        <br>
+
+        <label for="room_name">Room</label>
+        <br>
+        <select id="room_name" name="room_name" required></select>
+        <br>
+
+        <div class="datetime-wrapper">
+            <label for="start_date">Start date</label>
+            <input type="date" id="start_date" name="start_date" required>
+
+            <label for="start_time">Start time</label>
+            <input type="time" id="start_time" name="start_time" step="1" required>
+        </div>
+
+        <div class="datetime-wrapper">
+            <label for="end_date">End date</label>
+            <input type="date" id="end_date" name="end_date" required>
+
+            <label for="end_time">End time</label>
+            <input type="time" id="end_time" name="end_time" step="1" required>
+        </div>
+        <input type="text" name="commit_hash" id="commit_hash" placeholder="Commit Hash (if empty, use locally installed FSM)">
+        <button id="run_fsm_localisation" type="submit" name="submit_button" value="run_fsm_localisation">Run Finite State Machine: Localisation</button>
+        <button id="run_fsm_gui" type="submit" name="submit_button" value="run_fsm_gui">Run Finite State Machine: GUI</button>
+        <button id="old_fsm" type="submit" name="submit_button" value="old_fsm">Old Finite State Machine</button>
+    </form>
+    <button id="open_cdv">Open Cloud Data Viewer</button>
+</div>
+<br>
+<label for="{{annotation_type}}">{{annotation_type}}</label>
+<div name="{{annotation_type}}" class="table-wrapper">
+    <table id="table">
+        <tr>
+            {% for column in columns %}
+            <td>{{ column }}</td>
+            {% endfor %}
+        </tr>
+
+        {% for row_num in range(annotations|length) %}
+        <tr>
+            {% for column in annotations[row_num] %}
+            <td>{{ column }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+{% endblock %}

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        {% block header %}{% endblock %}
+        <link rel="stylesheet" href={{ url_for('static', filename='css/base.css') }}>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+        <div class="header">
+            <span class="logo">Finite State Machine</span>
+            <div class="header-right">
+                <a {{"class=active" if request.path == "/"}} href="/">Home</a>
+            </div>
+          </div>
+        {% block content %}{% endblock %}
+    </body>
+    
+</html>

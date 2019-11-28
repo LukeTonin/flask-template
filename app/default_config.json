@@ -1,0 +1,9 @@
+{
+    "SECRET_KEY": "NOT SECRET KEY",
+    "CACHE": {
+        "CACHE_TYPE": "filesystem",
+        "CACHE_DIR": "tmp"
+    }
+}
+
+
