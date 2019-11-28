@@ -1,5 +1,5 @@
 {
-    "SECRET_KEY": "example",
+    "SECRET_KEY": "SECRET KEY, CONFIG NOT STORED IN SOURCE CONTROL",
     "CACHE": {
         "CACHE_TYPE": "filesystem",
         "CACHE_DIR": "tmp"
